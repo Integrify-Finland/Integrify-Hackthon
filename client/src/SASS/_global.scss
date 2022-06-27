@@ -1,6 +1,6 @@
 // This partial contains styling that overrides global elements, such as the #root or body elements
 
-@use '../components//Navbar.tsx';
+@import './components/Navbar';
 @import './mixins';
 @import './variables';
 @import './typography';
