@@ -1,10 +1,12 @@
 // This partial contains styling that overrides global elements, such as the #root or body elements
 @use './components/reports';
+@use '../components/widgets/aboutUs/aboutUs';
 
 @import './components/Navbar';
 @import './mixins';
 @import './variables';
 @import './typography';
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 /* Box sizing rules */
 *,
@@ -25,6 +27,7 @@ blockquote,
 dl,
 dd {
   margin: 0;
+    font-family: 'Space Grotesk';
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
