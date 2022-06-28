@@ -23,7 +23,7 @@ const Reports = () => {
     renderHeader: (params: GridColumnHeaderParams) => (<strong>{'Activity'}</strong>),
     renderCell: (params) => {
       return (
-        params.value.activity == 'Sick leave' ? (
+        params.value.activity === 'Sick leave' ? (
           <div className='reports__user__activity' style={{ backgroundColor: '#6F6f6f', color: '#ffffff'}}>
           {params.value.activity}
           </div>
@@ -36,6 +36,18 @@ const Reports = () => {
       );
     }}
   ];
+
+  /*Get the first div (which is the MUI datagrid element) and clear the 0px CSS height style. This is meant to enhnace the height aesthetics of the table
+  */
+  const gridWrapperRef = React.useRef<HTMLDivElement>(null);
+  React.useLayoutEffect(() => {
+      const gridDiv = gridWrapperRef.current;
+      if (gridDiv){
+          const gridEl: HTMLDivElement = gridDiv.querySelector('div')!;
+          gridEl.style.height = '';
+      }
+  });
+
 
   const rows:any = [
     {id: 1, 
@@ -50,7 +62,8 @@ const Reports = () => {
   ];
 
   return (
-    <div className='reports__container'>
+    <div className='reports__container' ref={gridWrapperRef}> 
+      <div>
       <p className='reports__container__header'>Reports</p>
       <DataGrid aria-label='table'
         rowHeight={80}
@@ -58,7 +71,9 @@ const Reports = () => {
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
+        autoHeight={true}
       />
+      </div>
     </div>
   )
 }
