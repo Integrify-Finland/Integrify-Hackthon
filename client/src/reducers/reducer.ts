@@ -8,9 +8,9 @@ const initialState: User[] = [];
 
 export const fetchUsers = createAsyncThunk("fetchUsers", async () => {
   try {
-    const data = await axios.get(`http://localhost:5050/api/v1/users`);
-    // const result = await data.json();
-    return await data;
+    const data = await fetch(`http://localhost:5050/api/v1/users`);
+    const result = await data.json();
+    return data;
   } catch (error: any) {
     console.log(error);
   }
@@ -26,15 +26,11 @@ const userSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-<<<<<<< HEAD
-    // builder.addCase(fetchUsers.fulfilled, (state, action) => {
-    //   return action.payload;
-    // });
-=======
     builder.addCase(fetchUsers.fulfilled, (state, action) => {
-      console.log('users...:',action.payload);
+      console.log("users...:", state);
+      // return action.payload;
+      // return action.payload
     });
->>>>>>> 23a1572229ea9c1d911fbdc83af08c7327d93cd7
   },
 });
 

@@ -4,7 +4,9 @@ import { Typography } from "@mui/material";
 import { useAppSelector, useAppDispatch } from "../../../hooks/appHooks";
 
 const Total = () => {
-  // import { useNavigate } from "react-router-dom";
+  const users = useAppSelector((state) => state.userReducer);
+  console.log(users);
+
   return (
     <div className="totalWidget">
       <Typography className="title">Total revenue</Typography>

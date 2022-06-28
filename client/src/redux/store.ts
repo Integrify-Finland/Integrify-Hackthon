@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { applyMiddleware, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { configureStore } from "@reduxjs/toolkit";
@@ -9,18 +8,6 @@ const store = configureStore({
     userReducer,
   },
 });
-=======
-import { applyMiddleware, compose, createStore } from 'redux'
-import thunk from 'redux-thunk'
-import {configureStore} from "@reduxjs/toolkit"
-import {userReducer} from "../reducers/reducer"
-
-const store = configureStore({
-    reducer: {
-        userReducer
-    }
-})
->>>>>>> 23a1572229ea9c1d911fbdc83af08c7327d93cd7
 
 export type RootState = ReturnType<typeof store.getState>; //app state
 export type AppDispatch = typeof store.dispatch;
