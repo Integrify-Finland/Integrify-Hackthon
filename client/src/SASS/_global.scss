@@ -5,3 +5,8 @@
 @import './mixins';
 @import './variables';
 @import './typography';
+
+body{
+    display: flex;
+    flex-direction: column;
+}
