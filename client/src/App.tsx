@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useEffect } from "react";
+=======
+import React, { useEffect } from 'react';
+>>>>>>> 23a1572229ea9c1d911fbdc83af08c7327d93cd7
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { useAppDispatch, useAppSelector } from "./hooks/appHooks";
@@ -24,6 +28,7 @@ function App() {
 
   return (
     <div className="App">
+      <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -33,6 +38,7 @@ function App() {
         <Route path="calendar" element={<Calendar />} />
         <Route path="sickleavesholidays" element={<SickLeavesHolidays />} />
       </Routes>
+      </BrowserRouter>
     </div>
   );
 }
