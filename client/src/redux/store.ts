@@ -1,11 +1,11 @@
 import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk'
 import {configureStore} from "@reduxjs/toolkit"
-import {companyReducer} from "../reducers/reducer"
+import {userReducer} from "../reducers/reducer"
 
 const store = configureStore({
     reducer: {
-        companyReducer
+        userReducer
     }
 })
 
