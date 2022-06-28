@@ -16,7 +16,6 @@ const customerSchema = new mongoose.Schema({
   },
   project: {
     type: String,
-    required: true,
   },
   activity: {
     type: String,
