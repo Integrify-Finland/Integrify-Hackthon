@@ -11,13 +11,13 @@ import { User } from "../../../types/User";
 const Total = () => {
   const dispatch = useAppDispatch();
   const users: any = useAppSelector((state) => state.userReducer);
+  const timesheet = useAppSelector((state) => state.timesheetReducer);
   useEffect(() => {
     dispatch(fetchUsers());
     dispatch(fetchCustomers());
     dispatch(fetchTimesheet());
-  }, []);
+  }, [dispatch]);
   console.log("Users: ", users);
-  const userdata = useAppSelector((state) => state.timesheetReducer);
   console.log("user" + users);
   // console.log("timesheet" + userdata);
 
@@ -26,7 +26,7 @@ const Total = () => {
       <Typography className="title">Total revenue</Typography>
       <div>
         <Typography variant="h4" className="counter">
-          {users[0].fullName}
+          {/* {users[0].fullName} */}
         </Typography>
         <Typography className="percentage">
           <ArrowUpwardIcon />
