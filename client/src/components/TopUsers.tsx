@@ -3,7 +3,7 @@ import { DataGrid, GridColDef, GridColumnHeaderParams, GridValueGetterParams } f
 import Avatar from "@mui/material/Avatar";
 
 
-const Reports = () => {
+const TopUsers = () => {
   const columns: GridColDef[] = [
     {field: 'user', 
     width: 300, 
@@ -78,4 +78,4 @@ const Reports = () => {
   )
 }
 
-export default Reports
+export default TopUsers

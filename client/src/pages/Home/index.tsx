@@ -1,4 +1,4 @@
-import Reports from "../../components/Reports";
+import Reports from "../../components/TopUsers";
 import React from "react";
 import Navbar from "../../components/Navbar";
 
