@@ -5,13 +5,11 @@ import axios from "axios";
 
 const initialState: [] = [];
 
-export const fetchAllUsers = createA;
-
 export const fetchUsers = createAsyncThunk("fetchUsers", async () => {
   try {
-    const data = await axios.get(`https://api.escuelajs.co/api/v1/products/`);
-    const result = await data.json();
-    return result;
+    const data = await axios.get(`http://localhost:5050/api/v1/users`);
+    // const result = await data.json();
+    return data;
   } catch (error: any) {
     console.log(error);
   }
@@ -23,9 +21,9 @@ const companySlice = createSlice({
   reducers: {
     calcUserSalary: (state, action) => {},
   },
-  extraReducers: (build) => {
-    build.addCase(fetchUsers.fulfilled, (state, action) => {
-      return action.payload;
+  extraReducers: (builder) => {
+    builder.addCase(fetchUsers.fulfilled, (state, payload) => {
+      return state.duration;
     });
   },
 });
