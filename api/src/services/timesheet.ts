@@ -2,7 +2,9 @@ import Timesheet, { TimesheetDocument } from '../models/Timesheet'
 import { NotFoundError } from '../helpers/apiError'
 
 // create
-const create = async (timesheet: TimesheetDocument): Promise<TimesheetDocument> => {
+const create = async (
+  timesheet: TimesheetDocument
+): Promise<TimesheetDocument> => {
   return timesheet.save()
 }
 
@@ -13,7 +15,9 @@ const findAll = async (): Promise<TimesheetDocument[]> => {
 
 // findById
 const findById = async (timesheetId: string): Promise<TimesheetDocument> => {
-  const foundTimesheet = await Timesheet.findById(timesheetId).populate('userName').populate('customerName')
+  const foundTimesheet = await Timesheet.findById(timesheetId)
+    .populate('userName')
+    .populate('customerName')
 
   if (!foundTimesheet) {
     throw new NotFoundError(`Timesheet ${timesheetId} not found`)
@@ -27,9 +31,13 @@ const update = async (
   timesheetId: string,
   update: Partial<TimesheetDocument>
 ): Promise<TimesheetDocument | null> => {
-  const foundTimesheet = await Timesheet.findByIdAndUpdate(timesheetId, update, {
-    new: true,
-  })
+  const foundTimesheet = await Timesheet.findByIdAndUpdate(
+    timesheetId,
+    update,
+    {
+      new: true,
+    }
+  )
 
   if (!foundTimesheet) {
     throw new NotFoundError(`Timesheet ${timesheetId} not found`)
@@ -39,7 +47,9 @@ const update = async (
 }
 
 // delete timesheet
-const deleteTimesheet = async (timesheetId: string): Promise<TimesheetDocument | null> => {
+const deleteTimesheet = async (
+  timesheetId: string
+): Promise<TimesheetDocument | null> => {
   const foundTimesheet = Timesheet.findByIdAndDelete(timesheetId)
 
   if (!foundTimesheet) {
