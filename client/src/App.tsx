@@ -7,7 +7,6 @@ import Customers from "./pages/Customers";
 import Settings from "./pages/Settings";
 import SickLeavesHolidays from "./pages/SickLeavesHolidays";
 import Users from "./pages/Users";
-
 import Home from "./pages/Home";
 import CustomerList from "./components/CustomerList";
 
