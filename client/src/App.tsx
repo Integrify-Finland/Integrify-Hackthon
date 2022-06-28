@@ -9,18 +9,19 @@ import Customers from "./pages/Customers";
 import Settings from "./pages/Settings";
 import Users from "./pages/Users";
 import SickLeavesHolidays from "./pages/SickLeavesHolidays";
-// import sickLeavesHolidays from "./pages/sickLeavesHolidays";
-// import Users from "./pages/Users";
-
 import Home from "./pages/Home";
+import { fetchCustomers } from "./reducers/customerReducer";
+import { fetchTimesheet } from "./reducers/timeSheetReducer";
 
 function App() {
   const dispatch = useAppDispatch();
   const users = useAppSelector((state) => state.userReducer);
   useEffect(() => {
     dispatch(fetchUsers());
+    dispatch(fetchCustomers());
+    dispatch(fetchTimesheet());
   }, []);
-  // console.log("Users: ", users);
+  // console.log('Users: ',users)
 
   return (
     <div className="App">
