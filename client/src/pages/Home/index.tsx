@@ -2,6 +2,7 @@ import "./index.scss";
 import Total from "../../components/widgets/total/Total";
 import AboutUs from "../../components/widgets/aboutUs/AboutUs";
 import Statistics from "../../components/widgets/statistics/Statistics";
+import Reports from "../../components/TopUsers";
 
 export default function Home() {
   return (
@@ -23,8 +24,9 @@ export default function Home() {
           <div className="item-5">
             <Statistics />
           </div>
+          <Reports />
         </div>
       </div>
     </div>
-  );
+  )
 }

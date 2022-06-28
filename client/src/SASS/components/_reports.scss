@@ -1,0 +1,19 @@
+@import '../variables';
+
+.reports__container{
+width: 100%;
+// height: 600px;
+border: 1px solid $color-grey;
+border-radius: 16px;
+padding: 2em;
+}
+
+.reports__user__activity{
+    border-radius: 0.5em;
+    padding: 1em;
+    width: max-content;
+}
+
+.reports__container__header{
+    font-weight: bold;
+}

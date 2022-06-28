@@ -1,33 +1,45 @@
 import { Request, Response, NextFunction } from 'express'
 
-import User from '../models/User'
-import UserService from '../services/user'
+import Customer from '../models/Customer'
+import CustomerService from '../services/customer'
 import { BadRequestError } from '../helpers/apiError'
 
-// POST /users
-export const createUser = async (
+// POST /customers
+export const createCustomer = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
     const {
-      fullName,
-      internalRate,
+      customerName,
+      project,
+      activity,
+      billable,
+      hourlyRate,
+      monthlyRate,
     } = req.body
 
-    const user = new User({
-      fullName,
-      internalRate,
+    const customer = new Customer({
+      customerName,
+      project,
+      activity,
+      billable,
+      hourlyRate,
+      monthlyRate,
     })
 
-    // const user = new User({
-    //   fullName: 'Anders Svartholm',
-    //   internalRate: 25.67
+    // const customer = new Customer({
+    //   customerName: 'ABS Solutions',
+    //   project: 'FeetB',
+    //   activity: 'Development',
+    //   billable: 'Yes',
+    //   hourlyRate: 80,
+    //   monthlyRate: 0,
     // })
 
-    await UserService.create(user)
-    res.json(user)
+    await CustomerService.create(customer)
+    res.json(customer)
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))
@@ -37,14 +49,14 @@ export const createUser = async (
   }
 }
 
-// GET /users
-export const findAllUsers = async (
+// GET /customers
+export const findAllCustomers = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    res.json(await UserService.findAll())
+    res.json(await CustomerService.findAll())
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))
@@ -54,14 +66,14 @@ export const findAllUsers = async (
   }
 }
 
-// GET /users/:userId
-export const findUserById = async (
+// GET /customers/:customerId
+export const findCustomerById = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    res.json(await UserService.findById(req.params.userId))
+    res.json(await CustomerService.findById(req.params.customerId))
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))
@@ -71,17 +83,17 @@ export const findUserById = async (
   }
 }
 
-// PUT /users/:userId
-export const updateUserById = async (
+// PUT /customers/:customerId
+export const updateCustomerById = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
     const update = req.body
-    const userId = req.params.userId
-    const updatedUser = await UserService.update(userId, update)
-    res.json(updatedUser)
+    const customerId = req.params.userId
+    const updatedCustomer = await CustomerService.update(customerId, update)
+    res.json(updatedCustomer)
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))
@@ -91,14 +103,14 @@ export const updateUserById = async (
   }
 }
 
-// DELETE /users/:userId
-export const deleteUserById = async (
+// DELETE /customers/:customerId
+export const deleteCustomerById = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    await UserService.deleteUser(req.params.userId)
+    await CustomerService.deleteCustomer(req.params.customerId)
     res.status(204).end()
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
