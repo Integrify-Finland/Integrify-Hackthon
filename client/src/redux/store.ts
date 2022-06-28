@@ -1,5 +1,17 @@
 import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk'
+import {configureStore} from "@reduxjs/toolkit"
+import {companyReducer} from "../reducers/reducer"
+
+const store = configureStore({
+    reducer: {
+        companyReducer
+    }
+})
+
+export type RootState = ReturnType<typeof store.getState> //app state
+export type AppDispatch = typeof store.dispatch
+export default store
 
 // import rootReducer from './reducers'
 // import { AppState } from '../types'

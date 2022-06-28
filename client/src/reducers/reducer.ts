@@ -9,7 +9,7 @@ export const fetchUsers = createAsyncThunk("fetchUsers", async () => {
   try {
     const data = await axios.get(`http://localhost:5050/api/v1/users`);
     // const result = await data.json();
-    return data;
+    return await data;
   } catch (error: any) {
     console.log(error);
   }
@@ -22,8 +22,8 @@ const companySlice = createSlice({
     calcUserSalary: (state, action) => {},
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchUsers.fulfilled, (state, payload) => {
-      return state.duration;
+    builder.addCase(fetchUsers.fulfilled, (state, action) => {
+      return action.payload;
     });
   },
 });
