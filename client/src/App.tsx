@@ -11,6 +11,7 @@ import Users from "./pages/Users";
 import SickLeavesHolidays from "./pages/SickLeavesHolidays";
 import Home from "./pages/Home";
 import { fetchCustomers } from './reducers/customerReducer';
+import { fetchTimesheet } from './reducers/timeSheetReducer';
 
 function App() {
 const dispatch = useAppDispatch();
@@ -18,6 +19,7 @@ const users = useAppSelector(state => state.userReducer);
 useEffect(() =>{
   dispatch(fetchUsers())
   dispatch(fetchCustomers())
+  dispatch(fetchTimesheet())
 }, [])
 // console.log('Users: ',users)
 

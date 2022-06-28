@@ -23,7 +23,7 @@ const customerSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchCustomers.fulfilled, (state, action) => {
-      console.log('customers...:',action.payload);
+      // console.log('customers...:',action.payload);
       return action.payload
     });
   },
