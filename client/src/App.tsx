@@ -21,7 +21,7 @@ function App() {
     dispatch(fetchCustomers());
     dispatch(fetchTimesheet());
   }, []);
-  // console.log('Users: ',users)
+  // console.log("Users: ", users);
 
   return (
     <div className="App">

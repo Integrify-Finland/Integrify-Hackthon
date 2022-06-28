@@ -1,19 +1,32 @@
 import "./total.scss";
+import React, { useEffect } from "react";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { Typography } from "@mui/material";
 import { useAppSelector, useAppDispatch } from "../../../hooks/appHooks";
+import { fetchCustomers } from "../../../reducers/customerReducer";
+import { fetchTimesheet } from "../../../reducers/timeSheetReducer";
+import { fetchUsers } from "../../../reducers/reducer";
+import { User } from "../../../types/User";
 
 const Total = () => {
-  const users = useAppSelector((state) => state.userReducer);
-  // const userdata = useAppSelector((state.name)=>state.userReducer)
-  // console.log(users);
+  const dispatch = useAppDispatch();
+  const users: any = useAppSelector((state) => state.userReducer);
+  useEffect(() => {
+    dispatch(fetchUsers());
+    dispatch(fetchCustomers());
+    dispatch(fetchTimesheet());
+  }, []);
+  console.log("Users: ", users);
+  const userdata = useAppSelector((state) => state.timesheetReducer);
+  console.log("user" + users);
+  // console.log("timesheet" + userdata);
 
   return (
     <div className="totalWidget">
       <Typography className="title">Total revenue</Typography>
       <div>
         <Typography variant="h4" className="counter">
-          $34.1K
+          {users[0].fullName}
         </Typography>
         <Typography className="percentage">
           <ArrowUpwardIcon />

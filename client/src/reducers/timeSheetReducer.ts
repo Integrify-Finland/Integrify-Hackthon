@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {Timesheet} from '../types/Timesheet'
-
+import { Timesheet } from "../types/Timesheet";
 
 const initialState: Timesheet[] = [];
 
@@ -22,12 +21,11 @@ const timesheetSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchTimesheet.fulfilled, (state, action) => {
-      console.log('timesheet...:',action.payload);
-      return action.payload
+      // console.log('timesheet...:',action.payload);
+      return action.payload;
     });
   },
 });
 
-
 export const timesheetReducer = timesheetSlice.reducer;
-export const {  } = timesheetSlice.actions;
+export const {} = timesheetSlice.actions;
