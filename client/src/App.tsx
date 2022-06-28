@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import Calendar from "./pages/Calendar";
 import Customers from "./pages/Customers";
 import Settings from "./pages/Settings";
-import sickLeavesHolidays from "./pages/sickLeavesHolidays";
+import SickLeavesHolidays from "./pages/SickLeavesHolidays";
 import Users from "./pages/Users";
 
 import Home from "./pages/Home";
