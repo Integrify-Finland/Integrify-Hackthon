@@ -1,32 +1,36 @@
 import { Request, Response, NextFunction } from 'express'
 
-import Customer from '../models/Customer'
-import CustomerService from '../services/customer'
+import Timesheet from '../models/Timesheet'
+import TimesheetService from '../services/timesheet'
 import { BadRequestError } from '../helpers/apiError'
 
-// POST /customers
-export const createCustomer = async (
+// POST /timesheets
+export const createTimesheet = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
     const {
+      date,
+      from,
+      to,
+      duration,
+      rate,
+      userName,
       customerName,
-      project,
-      activity,
-      billable,
-      hourlyRate,
-      monthlyRate,
+      exported,
     } = req.body
 
-    const customer = new Customer({
+    const timesheet = new Timesheet({
+      date,
+      from,
+      to,
+      duration,
+      rate,
+      userName,
       customerName,
-      project,
-      activity,
-      billable,
-      hourlyRate,
-      monthlyRate,
+      exported,
     })
 
     // const customer = new Customer({
@@ -38,8 +42,8 @@ export const createCustomer = async (
     //   monthlyRate: 0,
     // })
 
-    await CustomerService.create(customer)
-    res.json(customer)
+    await TimesheetService.create(timesheet)
+    res.json(timesheet)
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))
@@ -49,14 +53,14 @@ export const createCustomer = async (
   }
 }
 
-// GET /customers
-export const findAllCustomers = async (
+// GET /timesheets
+export const findAllTimesheets = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    res.json(await CustomerService.findAll())
+    res.json(await TimesheetService.findAll())
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))
@@ -66,14 +70,14 @@ export const findAllCustomers = async (
   }
 }
 
-// GET /customers/:customerId
-export const findCustomerById = async (
+// GET /timesheets/:timesheetId
+export const findTimesheetById = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    res.json(await CustomerService.findById(req.params.customerId))
+    res.json(await TimesheetService.findById(req.params.timesheetId))
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))
@@ -83,17 +87,17 @@ export const findCustomerById = async (
   }
 }
 
-// PUT /customers/:customerId
-export const updateCustomerById = async (
+// PUT  /timesheets/:timesheetId
+export const updateTimesheetById = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
     const update = req.body
-    const customerId = req.params.customerId
-    const updatedCustomer = await CustomerService.update(customerId, update)
-    res.json(updatedCustomer)
+    const timesheetId = req.params.timesheetId
+    const updatedTimesheet = await TimesheetService.update(timesheetId, update)
+    res.json(updatedTimesheet)
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))
@@ -103,14 +107,14 @@ export const updateCustomerById = async (
   }
 }
 
-// DELETE /customers/:customerId
-export const deleteCustomerById = async (
+// DELETE /timesheets/:timesheetId
+export const deleteTimesheetById = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    await CustomerService.deleteCustomer(req.params.customerId)
+    await TimesheetService.deleteTimesheet(req.params.timesheetId)
     res.status(204).end()
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
