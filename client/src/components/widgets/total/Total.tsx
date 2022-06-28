@@ -5,7 +5,8 @@ import { useAppSelector, useAppDispatch } from "../../../hooks/appHooks";
 
 const Total = () => {
   const users = useAppSelector((state) => state.userReducer);
-  console.log(users);
+  // const userdata = useAppSelector((state.name)=>state.userReducer)
+  // console.log(users);
 
   return (
     <div className="totalWidget">
