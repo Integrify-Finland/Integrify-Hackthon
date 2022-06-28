@@ -1,0 +1,36 @@
+.aboutWidget{
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47); 
+  box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47);
+  border-radius: 10px;
+  height: 210px;
+
+  .left{
+    padding: 30px;
+
+    Button{
+      background-color: palevioletred;
+      margin-top: 15px;
+    }
+  }
+  .right{
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 370px;
+        height: 110%;
+        padding-right: 30px;
+        padding-bottom: 20px;
+        opacity: 70%;
+      }
+  }
+}
+
+  .title{
+    // font-weight: bold;
+    font-size: 14px;
+    // color: rgb(160, 160, 160)
+  }

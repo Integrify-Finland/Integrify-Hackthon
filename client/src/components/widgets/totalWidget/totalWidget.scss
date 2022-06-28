@@ -1,0 +1,23 @@
+.widget{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47); 
+  box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47);
+  border-radius: 10px;
+  height: 150px;
+
+  .title{
+    // font-weight: bold;
+    font-size: 14px;
+    // color: rgb(160, 160, 160)
+  }
+
+  .percentage{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+}

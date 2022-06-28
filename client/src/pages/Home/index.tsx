@@ -1,10 +1,17 @@
-import React from 'react'
+import "./index.scss";
+import TotalWidget from "../../components/widgets/totalWidget/TotalWidget";
+import AboutUs from "../../components/widgets/aboutUsWidget/AboutUs";
 
 export default function Home() {
-
   return (
-    <>
-      <p>Here we go!</p>
-    </>
-  )
+    <div className="home">
+      <div className="homeContainer">
+        <div className="widgets">
+          <AboutUs />
+          <TotalWidget />
+          <TotalWidget />
+        </div>
+      </div>
+    </div>
+  );
 }
