@@ -1,9 +1,9 @@
 import "./total.scss";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { Typography } from "@mui/material";
+import { useAppSelector, useAppDispatch } from "../../../hooks/appHooks";
 
 const Total = () => {
-  // import { useAppSelector, useAppDispatch } from "../../";
   // import { useNavigate } from "react-router-dom";
   return (
     <div className="totalWidget">

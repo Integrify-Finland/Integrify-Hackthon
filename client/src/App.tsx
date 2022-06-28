@@ -16,7 +16,7 @@ import Home from "./pages/Home";
 
 function App() {
   const dispatch = useAppDispatch();
-  const users = useAppSelector((state) => state.companyReducer);
+  const users = useAppSelector((state) => state.userReducer);
   useEffect(() => {
     dispatch(fetchUsers());
   }, []);
