@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { useAppDispatch, useAppSelector } from './hooks/appHooks';
@@ -24,6 +24,7 @@ console.log('Users: ',users)
 
   return (
     <div className="App">
+      <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -33,6 +34,7 @@ console.log('Users: ',users)
         <Route path="calendar" element={<Calendar />} />
         <Route path="sickleavesholidays" element={<SickLeavesHolidays />} />
       </Routes>
+      </BrowserRouter>
     </div>
   );
 }
