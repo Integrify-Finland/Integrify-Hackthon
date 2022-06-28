@@ -3,7 +3,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { Typography } from "@mui/material";
 
 const Total = () => {
-  // import { useAppSelector, useAppDispatch } from "../hooks/hooks";
+  // import { useAppSelector, useAppDispatch } from "../../";
   // import { useNavigate } from "react-router-dom";
   return (
     <div className="totalWidget">
