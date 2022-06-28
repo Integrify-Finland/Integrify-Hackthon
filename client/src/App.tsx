@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import { useAppDispatch, useAppSelector } from "./hooks/appHooks";
+import { fetchUsers } from "./reducers/reducer";
 import Navbar from "./components/Navbar";
 import Calendar from "./pages/Calendar";
 import Customers from "./pages/Customers";
@@ -13,6 +15,13 @@ import SickLeavesHolidays from "./pages/SickLeavesHolidays";
 import Home from "./pages/Home";
 
 function App() {
+  const dispatch = useAppDispatch();
+  const users = useAppSelector((state) => state.companyReducer);
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, []);
+  console.log("Users: ", users);
+
   return (
     <div className="App">
       <Navbar />
