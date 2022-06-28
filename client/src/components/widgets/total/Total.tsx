@@ -1,10 +1,10 @@
-import "./totalWidget.scss";
+import "./total.scss";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { Typography } from "@mui/material";
 
-const TotalWidget = () => {
+const Total = () => {
   return (
-    <div className="widget">
+    <div className="totalWidget">
       <Typography className="title">Total revenue</Typography>
       <div>
         <Typography variant="h4" className="counter">
@@ -19,4 +19,4 @@ const TotalWidget = () => {
   );
 };
 
-export default TotalWidget;
+export default Total;
