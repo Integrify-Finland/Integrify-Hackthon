@@ -1,9 +1,10 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import {User} from '../types/User'
 // import { FetchProductsParams } from "../types/category";
 // import { Product, updateActionType } from "../types/product";
 import axios from "axios";
 
-const initialState: [] = [];
+const initialState: User[] = [];
 
 export const fetchUsers = createAsyncThunk("fetchUsers", async () => {
   try {
@@ -15,8 +16,8 @@ export const fetchUsers = createAsyncThunk("fetchUsers", async () => {
   }
 });
 
-const companySlice = createSlice({
-  name: "companySlice",
+const userSlice = createSlice({
+  name: "userSlice",
   initialState: initialState,
   reducers: {
     calcUserSalary: (state, action) => {},
@@ -28,5 +29,5 @@ const companySlice = createSlice({
   },
 });
 
-export const companyReducer = companySlice.reducer;
-export const { calcUserSalary } = companySlice.actions;
+export const userReducer = userSlice.reducer;
+export const { calcUserSalary } = userSlice.actions;
