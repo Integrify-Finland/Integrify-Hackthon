@@ -16,6 +16,7 @@ export const fetchUsers = createAsyncThunk("fetchUsers", async () => {
   }
 });
 
+
 const userSlice = createSlice({
   name: "userSlice",
   initialState: initialState,
@@ -24,11 +25,12 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchUsers.fulfilled, (state, action) => {
-      console.log('users...:',action.payload);
+      // console.log('users...:',action.payload);
       return action.payload
     });
   },
 });
+
 
 export const userReducer = userSlice.reducer;
 export const { calcUserSalary } = userSlice.actions;
