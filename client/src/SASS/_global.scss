@@ -1,5 +1,10 @@
 // This partial contains styling that overrides global elements, such as the #root or body elements
+<<<<<<< HEAD
 @use './components/reports';
+=======
+
+@import './components/Navbar';
+>>>>>>> 8c5b4fa9381eed07b07af32413d6536f1eafb5ea
 @import './mixins';
 @import './variables';
 @import './typography';
