@@ -16,6 +16,7 @@ export const fetchUsers = createAsyncThunk("fetchUsers", async () => {
   }
 });
 
+
 const userSlice = createSlice({
   name: "userSlice",
   initialState: initialState,
@@ -29,6 +30,7 @@ const userSlice = createSlice({
     });
   },
 });
+
 
 export const userReducer = userSlice.reducer;
 export const { calcUserSalary } = userSlice.actions;
