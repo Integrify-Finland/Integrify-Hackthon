@@ -8,10 +8,10 @@ const CustomerList = () => {
         width: 300, 
         renderHeader: (params: GridColumnHeaderParams) => (<strong>{'Customer'}</strong>), renderCell: (params) => {
           return (
-            <>
-              <Avatar src={params.value.avatar} />
-              {params.value.customerName}
-            </>
+            <div>
+              <Avatar src={params.value?.avatar} />
+              {params.value?.customerName}
+            </div>
           );
         }},
         {field: 'recentProject', width: 300, renderHeader: (params: GridColumnHeaderParams) => (<strong>{'Recent Project'}</strong>)},
@@ -34,9 +34,9 @@ const CustomerList = () => {
           customer: {customerName: 'ABB Solution', avatar: 'https://assets.materialup.com/uploads/bebad102-7f40-4941-99cd-54366113003e/avatar-08.png'}, 
           recentProject: 'FeetB'},
         {id: 2, 
-          user: {customerName: 'Paddington Ltd', avatar: 'https://assets.materialup.com/uploads/bebad102-7f40-4941-99cd-54366113003e/avatar-08.png'} , recentProject: 'UX design'},
+          customer: {customerName: 'Paddington Ltd', avatar: 'https://assets.materialup.com/uploads/bebad102-7f40-4941-99cd-54366113003e/avatar-08.png'} , recentProject: 'UX design'},
         {id: 3, 
-          user: {customerName: 'Unicorn Oy', avatar: 'https://assets.materialup.com/uploads/bebad102-7f40-4941-99cd-54366113003e/avatar-08.png'}, recentProject: 'Space shuttle control panel'}
+          customer: {customerName: 'Unicorn Oy', avatar: 'https://assets.materialup.com/uploads/bebad102-7f40-4941-99cd-54366113003e/avatar-08.png'}, recentProject: 'Space shuttle control panel'}
       ];
     
       return (
