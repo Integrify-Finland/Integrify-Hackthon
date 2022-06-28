@@ -9,12 +9,16 @@ import SickLeavesHolidays from "./pages/SickLeavesHolidays";
 import Users from "./pages/Users";
 
 import Home from "./pages/Home";
+import CustomerList from "./components/CustomerList";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/customers" element={<Customers />} />
+        <Route path="/" element={<Home />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </div>
