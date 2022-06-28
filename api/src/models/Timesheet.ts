@@ -2,14 +2,14 @@ import { timeStamp } from 'console'
 import mongoose, { Document, Schema } from 'mongoose'
 
 export type TimesheetDocument = Document & {
-  date: Date,
-  from: Date,
-  to: Date,
-  duration: Number,
-  rate: Number,
-  userName: string[],
-  customerName: string[],
-  exported: string,
+  date: Date
+  from: Date
+  to: Date
+  duration: number
+  rate: number
+  userName: string[]
+  customerName: string[]
+  exported: string
 }
 
 const timesheetSchema = new mongoose.Schema({
@@ -28,7 +28,7 @@ const timesheetSchema = new mongoose.Schema({
   },
   duration: {
     type: Number,
-    require: true
+    require: true,
   },
   rate: {
     type: Number,
@@ -47,6 +47,6 @@ const timesheetSchema = new mongoose.Schema({
   exported: {
     type: String,
   },
-});
+})
 
 export default mongoose.model<TimesheetDocument>('Timesheet', timesheetSchema)

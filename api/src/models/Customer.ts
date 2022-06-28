@@ -1,12 +1,12 @@
 import mongoose, { Document, Schema } from 'mongoose'
 
 export type CustomerDocument = Document & {
-  customerName: string,
-  project: string,
-  activity: string,
-  billable: string,
-  hourlyRate: number,
-  monthlyRate: number,
+  customerName: string
+  project: string
+  activity: string
+  billable: string
+  hourlyRate: number
+  monthlyRate: number
 }
 
 const customerSchema = new mongoose.Schema({
@@ -20,18 +20,18 @@ const customerSchema = new mongoose.Schema({
   activity: {
     type: String,
     required: true,
-    default: 'Development'
+    default: 'Development',
   },
   billable: {
     type: String,
     required: true,
-    default: 'Yes'
+    default: 'Yes',
   },
   hourlyRate: {
-    type: Number
+    type: Number,
   },
   monthlyRate: {
-    type: Number
+    type: Number,
   },
 })
 

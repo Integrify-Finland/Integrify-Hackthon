@@ -1,11 +1,13 @@
 import { Typography } from "@mui/material";
+import StatBarChart from "./barChart/StatBarChart";
 import "./statistics.scss";
-import { Bar } from "react-chartjs-2";
-import Chart from "chart.js/auto";
+// import { Bar } from "react-chartjs-2";
+// import Chart from "chart.js/auto";
 
 const Statistics = () => {
   return (
     <div className="statisticsWidget">
+      <StatBarChart />
       {/* <Typography className="title">Total revenue</Typography>
       <Bar
         data={{

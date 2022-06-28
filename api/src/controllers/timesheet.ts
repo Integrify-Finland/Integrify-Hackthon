@@ -11,16 +11,8 @@ export const createTimesheet = async (
   next: NextFunction
 ) => {
   try {
-    const {
-      date,
-      from,
-      to,
-      duration,
-      rate,
-      userName,
-      customerName,
-      exported,
-    } = req.body
+    const { date, from, to, duration, rate, userName, customerName, exported } =
+      req.body
 
     const timesheet = new Timesheet({
       date,
