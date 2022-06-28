@@ -10,7 +10,11 @@ export const fetchUsers = createAsyncThunk("fetchUsers", async () => {
   try {
     const data = await fetch(`http://localhost:5050/api/v1/users`);
     const result = await data.json();
+<<<<<<< HEAD
     return data;
+=======
+    return result;
+>>>>>>> 65abbb525bdf566d3d709b239f9edf7d8d178926
   } catch (error: any) {
     console.log(error);
   }
@@ -27,9 +31,14 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchUsers.fulfilled, (state, action) => {
+<<<<<<< HEAD
       console.log("users...:", state);
       // return action.payload;
       // return action.payload
+=======
+      console.log('users...:',action.payload);
+      return action.payload
+>>>>>>> 65abbb525bdf566d3d709b239f9edf7d8d178926
     });
   },
 });
