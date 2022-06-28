@@ -18,8 +18,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/customers" element={<Customers />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/sickleavesholidays" element={<SickLeavesHolidays />} />
+        <Route path="/users" element={<Users />} />
       </Routes>
     </div>
   );
