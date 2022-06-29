@@ -28,3 +28,5 @@ The challenge is to find an effective way of creating a dashboard for presenting
 - Team collaboration
 - Definitely more skills on git
 - And many more....
+
+**Link to the presentation**: [here](https://docs.google.com/presentation/d/1gcN9qESChbAU9UMVYWmyB4V-vdocwRe_/edit?usp=sharing&ouid=102287417491904044819&rtpof=true&sd=true).
