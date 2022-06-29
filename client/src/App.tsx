@@ -20,8 +20,8 @@ useEffect(() =>{
   dispatch(fetchUsers())
   dispatch(fetchCustomers())
   dispatch(fetchTimesheet())
-}, [])
-// console.log('Users: ',users)
+}, [dispatch])
+console.log('Users from app.tsx: ',users)
 
   return (
     <div className="App">

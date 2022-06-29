@@ -10,7 +10,7 @@ const create = async (
 
 // findAll
 const findAll = async (): Promise<TimesheetDocument[]> => {
-  return Timesheet.find()
+  return Timesheet.find().populate('userName').populate('customerName')
 }
 
 // findById
