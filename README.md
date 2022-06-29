@@ -13,7 +13,7 @@ The challenge is to find an effective way of creating a dashboard for presenting
 - Created an attractive front-end.
 - Deploy the app to Netlify.
 
-### Used technologies:
+### Used technologies/tools:
 - React/ Redux
 - JavaScript
 - HTML
@@ -22,3 +22,9 @@ The challenge is to find an effective way of creating a dashboard for presenting
 - TypeScript
 - ExpressJS/ NodeJS
 - MongoDb Atlas/ Mongoose
+- Figma (for designing)
+
+### Lessons haven been learn:
+- Team collaboration
+- Definitely more skills on git
+- And many more....
