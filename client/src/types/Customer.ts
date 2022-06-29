@@ -1,13 +1,13 @@
 export interface Customer {
-  _id: string,
-  customerName: string, 
-  activity: string,
-  projectName: string,
-  hourlyRate: number|null,
-  monthlyRate: number|null,
-  billable: string,
-  __v: number
-  }
+  _id: string;
+  customerName: string;
+  activity: string;
+  projectName: string;
+  hourlyRate: number;
+  monthlyRate: number;
+  billable: string;
+  __v: number;
+}
 
 // [
 //   {

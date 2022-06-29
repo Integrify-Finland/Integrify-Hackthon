@@ -87,8 +87,13 @@ select {
 .App{
         display: flex;
         width: 100%;
+
 }
 body{
     display: flex;
     flex-direction: column;
+}
+
+.home{
+  margin-left:10%;
 }

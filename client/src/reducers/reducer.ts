@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {User} from '../types/User'
+import { User } from "../types/User";
 // import { FetchProductsParams } from "../types/category";
 // import { Product, updateActionType } from "../types/product";
 import axios from "axios";
@@ -16,21 +16,22 @@ export const fetchUsers = createAsyncThunk("fetchUsers", async () => {
   }
 });
 
-
 const userSlice = createSlice({
   name: "userSlice",
   initialState: initialState,
   reducers: {
-    calcUserSalary: (state, action) => {},
+    calcUserSalary: (state, action) => {
+      // let employeeSalary = state.internalRate * state.duration;
+      // return employeeSalary;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchUsers.fulfilled, (state, action) => {
       // console.log('users...:',action.payload);
-      return action.payload
+      return action.payload;
     });
   },
 });
-
 
 export const userReducer = userSlice.reducer;
 export const { calcUserSalary } = userSlice.actions;
