@@ -17,6 +17,12 @@ const Total = () => {
     dispatch(fetchCustomers());
     dispatch(fetchTimesheet());
   }, [dispatch]);
+  // console.log("Users: ", users[1].internalRate);
+  // console.log("timesheet" + timesheet[1].duration);
+  // const duration: any = parseInt(timesheet[1].duration);
+  // const revenue = users[1].internalRate * (duration / 3600);
+  // console.log(revenue);
+  // console.log(timesheet);
 
   let totalEmployeeSalary = 0;
   let totalIncome = 0;
@@ -37,26 +43,22 @@ const Total = () => {
           parseInt(timesheet[i].duration)) /
         3600;
       totalIncome += income;
+
+      console.log("e" + employeeSalary);
+      // console.log("p" + profit);
     }
   }
   let profit = totalIncome - totalEmployeeSalary;
+  console.log("i" + totalIncome);
+  console.log("t" + totalEmployeeSalary);
+  console.log("profit" + profit);
 
   return (
     <div className="totalWidget">
-      {/* <Typography className="title">Total revenue</Typography>
+      <Typography className="title">Total revenue</Typography>
       <div>
         <Typography variant="h4" className="counter">
           {totalIncome.toFixed(1)}€
-        </Typography>
-        <Typography className="percentage">
-          <ArrowUpwardIcon />
-          105.23%
-        </Typography>
-      </div> */}
-      <Typography className="title">Total Profit</Typography>
-      <div>
-        <Typography variant="h4" className="counter">
-          {profit.toFixed(1)}€
         </Typography>
         <Typography className="percentage">
           <ArrowUpwardIcon />
