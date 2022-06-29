@@ -3,8 +3,8 @@ export interface Customer {
   customerName: string, 
   activity: string,
   projectName: string,
-  hourlyRate: number|null,
-  monthlyRate: number|null,
+  hourlyRate: number,
+  monthlyRate: number,
   billable: string,
   __v: number
   }
