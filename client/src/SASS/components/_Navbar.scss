@@ -1,6 +1,7 @@
 @import '../variables';
 
 .nav-container{
+    position: fixed;
     display: flex;
     flex-direction: column;
     max-width: 10%;

@@ -1,21 +1,21 @@
-import { applyMiddleware, compose, createStore } from 'redux'
-import thunk from 'redux-thunk'
-import {configureStore} from "@reduxjs/toolkit"
-import {userReducer} from "../reducers/reducer"
-import { customerReducer } from '../reducers/customerReducer'
-import {timesheetReducer} from '../reducers/timeSheetReducer'
+import { applyMiddleware, compose, createStore } from "redux";
+import thunk from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
+import { userReducer } from "../reducers/reducer";
+import { customerReducer } from "../reducers/customerReducer";
+import { timesheetReducer } from "../reducers/timeSheetReducer";
 
 const store = configureStore({
-    reducer: {
-        userReducer,
-        customerReducer,
-        timesheetReducer
-    }
-})
+  reducer: {
+    userReducer,
+    customerReducer,
+    timesheetReducer,
+  },
+});
 
-export type RootState = ReturnType<typeof store.getState> //app state
-export type AppDispatch = typeof store.dispatch
-export default store
+export type RootState = ReturnType<typeof store.getState>; //app state
+export type AppDispatch = typeof store.dispatch;
+export default store;
 
 // import rootReducer from './reducers'
 // import { AppState } from '../types'
